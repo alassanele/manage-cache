@@ -30,5 +30,9 @@ public class CacheService {
     public void clear() {
         cache.clear();
     }
+
+    public boolean isCacheEmpty() {
+        return cache.isEmpty();
+    }
 }
 

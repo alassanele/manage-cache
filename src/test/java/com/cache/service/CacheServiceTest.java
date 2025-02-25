@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class CacheServiceTest {
 
     private CacheService cacheService;
@@ -58,6 +60,13 @@ public class CacheServiceTest {
         cacheService.clear();
         Assertions.assertNull(cacheService.get("key4"));
         Assertions.assertNull(cacheService.get("key5"));
+    }
+
+    @Test
+    public void testCacheIsEmpty() {
+        cacheService.clear();
+
+        assertTrue(cacheService.isCacheEmpty(), "Le cache devrait être vide");
     }
 
 }
